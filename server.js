@@ -19,4 +19,12 @@ app.use ('/breads', breadsController)
 app.listen(PORT, () => {
   console.log('listening on port', PORT);
 })
+
+// MIDDLEWARE
+app.use (express.static('public'))
+
+// 404 Page
+app.get('*', (req, res) => {
+    res.send('404')
+})
  
