@@ -27,4 +27,8 @@ app.use (express.static('public'))
 app.get('*', (req, res) => {
     res.send('404')
 })
- 
+ // ODM
+ const mongoose = require('mongoose');
+ mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log('connected to mongo: ', process.env.MONGO_URI))
