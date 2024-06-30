@@ -7,7 +7,7 @@ function New({ message }) {
         <Default>
             <h2>Add a new place</h2>
             {message && <p style={{color: 'red'}}>{message}</p>}
-            <form action="/places" method="POST">
+            <form action="/breads" method="POST">
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
@@ -36,31 +36,25 @@ function New({ message }) {
                     id="cuisines"
                     required
                 />
-                <label htmlFor="pic">Picture URL</label>
+                <label htmlFor="image">Picture URL</label>
                 <input
                     type="text"
-                    name="pic"
-                    id="pic"
+                    name="image"
+                    id="image"
                     defaultValue="http://placekitten.com/250/250"
-                />
-                <label htmlFor="founded">Founded Year</label>
-                <input
-                    type="number"
-                    name="founded"
-                    id="founded"
-                    defaultValue={currentYear}
                 />
                 <br />
                 <input type="submit"/>
             </form>
             <div className="backButton">
-                <a href="/places"><button>Go Back To The Index</button></a>
+                <a href="/breads"><button>Go Back To The Index</button></a>
             </div>
         </Default>
-    )
+    );
 }
 
 module.exports = New;
+
 
 
 
