@@ -1,18 +1,14 @@
-// require mongoose 
-const mongoose = require('mongoose')
-// creating shorthand for the Schema constructor 
-const { Schema } = mongoose 
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-// schema
 const breadSchema = new Schema({
     name: { type: String, required: true },
-    hasGluten: Boolean,
-    image: { type: String, default: 'http://placehold.it/500x500.png' }
-})
+    hasGluten: { type: Boolean, required: true },
+    image: { type: String, default: 'http://placekitten.com/250/250' },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    cuisines: { type: String, required: true }
+});
 
-// model and export 
-const Bread = mongoose.model('Bread', breadSchema)
-module.exports = Bread
-
-
-  
+const Bread = mongoose.model('Bread', breadSchema);
+module.exports = Bread;
