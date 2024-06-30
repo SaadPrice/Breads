@@ -1,19 +1,17 @@
 const React = require('react');
-const Default = require('./layouts/Default');
+const Default = require('../layouts/Default');
 
-function Index({ breads }) {
+function Index({ places }) {
     return (
         <Default>
             <h2>Index Page</h2>
-            {/* This is a JSX comment. */}
-            {/* <p>I have {breads[0].name} bread!</p> */}
             <ul>
                 {
-                    breads.map((bread, index) => {
+                    places.map((place, index) => {
                         return (
                             <li key={index}>
-                                <a href={`/breads/${bread.id}`}>
-                                    {bread.name}
+                                <a href={`/places/${place.id}`}>
+                                    {place.name}
                                 </a>
                             </li>
                         );
@@ -21,10 +19,12 @@ function Index({ breads }) {
                 }
             </ul>
             <div className="newButton">
-                <a href="/breads/new"><button>Add A New Bread</button></a>
+                <a href="/places/new"><button>Add A New Place</button></a>
             </div>
         </Default>
     );
 }
 
 module.exports = Index;
+
+
